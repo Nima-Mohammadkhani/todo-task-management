@@ -46,3 +46,8 @@ export interface ModalProps {
   className?: string;
   size?: "sm" | "md" | "lg" | "xl" | "full";
 }
+
+export interface ErrorFallbackProps {
+  error: Error;
+  resetErrorBoundary?: () => void;
+}
