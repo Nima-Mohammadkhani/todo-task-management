@@ -1,5 +1,5 @@
 import * as Icons from "lucide-react";
-import React from "react";
+import React, { ReactNode } from "react";
 
 export interface ButtonProps {
   title?: string;
@@ -37,4 +37,12 @@ export interface InputProps
   secureToggle?: boolean;
   containerClassName?: string;
   inputClassName?: string;
+}
+
+export interface ModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  children: ReactNode;
+  className?: string;
+  size?: "sm" | "md" | "lg" | "xl" | "full";
 }
