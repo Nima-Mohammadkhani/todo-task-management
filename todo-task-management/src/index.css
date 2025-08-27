@@ -1,2 +1,35 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+@font-face {
+  font-family: vazir;
+  src: url(..//font/Vazir-Medium.woff);
+}
+
+body {
+  font-family: vazir;
+}
+
+.Toastify__toast--success {
+  background: #e6ffed;
+  color: #0f5132;
+  font-family: "Vazir";
+}
+
+.Toastify__toast--error {
+  background: #ffe6e6;
+  color: #842029;
+  font-family: "Vazir";
+}
+
+.Toastify__toast--warning {
+  background: #fff4e5;
+  color: #663c00;
+  font-family: "Vazir";
+}
+
+.Toastify__toast--info {
+  background: #e0f2fe;
+  color: #075985;
+  font-family: "Vazir";
+}
