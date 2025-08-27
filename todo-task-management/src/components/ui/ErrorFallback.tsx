@@ -1,6 +1,6 @@
 import { ErrorFallbackProps } from "../../types/ui";
 
-const ErrorFallback = ({ error }: ErrorFallbackProps) => {
+const ErrorFallback: React.FC<ErrorFallbackProps> = ({ error }) => {
   return (
     <div className="p-4 bg-red-100 text-red-700 shadow">
       <h2 className="font-bold text-lg">
