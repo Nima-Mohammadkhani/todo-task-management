@@ -14,7 +14,7 @@ function App() {
     <BrowserRouter>
       <PWABadge />
       <ErrorBoundary FallbackComponent={ErrorFallback}>
-        <div className="w-full min-h-screen flex flex-col bg-base-200">
+        <div className="w-full min-h-screen flex flex-col bg-[#F5F8FF]">
           <AppRoutes />
         </div>
         <ToastContainer />
