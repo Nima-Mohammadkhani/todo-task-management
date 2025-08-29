@@ -9,28 +9,28 @@ import Setting from "../components/setting/setting";
 import Help from "../components/setting/help";
 
 const Index = () => {
-  const [currentStep, setCurrentStep] = useState<string>("dashboard");
+  const [currentStep, setCurrentStep] = useState<string>("Dashboard");
   const rendercurrentStep = () => {
     switch (currentStep) {
-      case "dashbord":
-        return <Dashboard setCurrentSte={setCurrentStep} />;
-      case "vitaltask":
-        return <VitalTask setCurrentSte={setCurrentStep} />;
-      case "task":
-        return <Task setCurrentSte={setCurrentStep} />;
-      case "taskCategories":
-        return <TaskCategories setCurrentSte={setCurrentStep} />;
-      case "setting":
-        return <Setting setCurrentSte={setCurrentStep} />;
-      case "help":
-        return <Help setCurrentSte={setCurrentStep} />;
+      case "Dashboard":
+        return <Dashboard />;
+      case "Vital Task":
+        return <VitalTask />;
+      case "My Task":
+        return <Task />;
+      case "Task Categories":
+        return <TaskCategories />;
+      case "Settings":
+        return <Setting />;
+      case "Help":
+        return <Help />;
     }
   };
   return (
     <section className="h-dvh flex flex-col">
       <Header />
       <div className="flex">
-        <Sidebar />
+        <Sidebar currentStep={currentStep} setCurrentStep={setCurrentStep} />
         <main className="flex-1 p-6">{rendercurrentStep()}</main>
       </div>
     </section>

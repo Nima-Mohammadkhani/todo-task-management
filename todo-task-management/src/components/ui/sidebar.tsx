@@ -1,14 +1,50 @@
 import Button from "./Button";
 import Icon from "./Icon";
 
-const Sidebar = () => {
+const Sidebar = ({ currentStep, setCurrentStep }: any) => {
   const sidebarItems = [
-    { name: "Dashboard", icon: "LayoutDashboard", action: () => {} },
-    { name: "Vital Task", icon: "ClipboardList", action: () => {} },
-    { name: "My Task", icon: "CheckSquare", action: () => {} },
-    { name: "Task Categories", icon: "FolderKanban", action: () => {} },
-    { name: "Settings", icon: "Settings", action: () => {} },
-    { name: "Help", icon: "HelpCircle", action: () => {} },
+    {
+      name: "Dashboard",
+      icon: "LayoutDashboard",
+      action: () => {
+        setCurrentStep("Dashboard");
+      },
+    },
+    {
+      name: "Vital Task",
+      icon: "ClipboardList",
+      action: () => {
+        setCurrentStep("Vital Task");
+      },
+    },
+    {
+      name: "My Task",
+      icon: "CheckSquare",
+      action: () => {
+        setCurrentStep("My Task");
+      },
+    },
+    {
+      name: "Task Categories",
+      icon: "FolderKanban",
+      action: () => {
+        setCurrentStep("Task Categories");
+      },
+    },
+    {
+      name: "Settings",
+      icon: "Settings",
+      action: () => {
+        setCurrentStep("Settings");
+      },
+    },
+    {
+      name: "Help",
+      icon: "HelpCircle",
+      action: () => {
+        setCurrentStep("Help");
+      },
+    },
   ];
 
   return (
@@ -32,7 +68,7 @@ const Sidebar = () => {
           {sidebarItems.map((item) => (
             <div
               className={`flex items-center gap-4 p-2 rounded-lg transition ${
-                item.name === "Dashboard"
+                item.name === currentStep
                   ? "bg-white text-black"
                   : "text-white hover:bg-[#ff7f7f]"
               }`}

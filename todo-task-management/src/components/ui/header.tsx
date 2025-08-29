@@ -11,7 +11,7 @@ const Header = () => {
         <Input placeholder="Search your task here..." className="p-2" />
         <Icon
           name="Search"
-          className="absolute right-0 top-0 h-10 rounded-md bg-[#FF6767] p-2 text-white"
+          className="absolute right-0 top-0 rounded-md h-full bg-[#FF6767] p-2 text-white"
         />
       </div>
       <div className="flex items-center gap-2">
@@ -27,7 +27,7 @@ const Header = () => {
         </div>
         <div className="flex flex-col items-center">
           <span>friday</span>
-          <span>2025/02/01</span>
+          <span>{new Date().toISOString().slice(0, 10)}</span>
         </div>
       </div>
     </section>
