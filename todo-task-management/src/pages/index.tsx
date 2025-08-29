@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Header from "../components/ui/header";
 import Sidebar from "../components/ui/sidebar";
+import Auth from "../components/auth/index";
 import Dashboard from "../components/dashboard/dashboard";
 import VitalTask from "../components/taskProcess/vitalTask";
 import Task from "../components/taskProcess/task";
@@ -10,6 +11,7 @@ import Help from "../components/setting/help";
 
 const Index = () => {
   const [currentStep, setCurrentStep] = useState<string>("Dashboard");
+  const [user, setUser] = useState<boolean>(false);
   const rendercurrentStep = () => {
     switch (currentStep) {
       case "Dashboard":
@@ -28,11 +30,20 @@ const Index = () => {
   };
   return (
     <section className="h-dvh flex flex-col">
-      <Header />
-      <div className="flex">
-        <Sidebar currentStep={currentStep} setCurrentStep={setCurrentStep} />
-        <main className="flex-1 p-6">{rendercurrentStep()}</main>
-      </div>
+      {!user ? (
+        <Auth setUser={setUser}/>
+      ) : (
+        <div>
+          <Header />
+          <div className="flex">
+            <Sidebar
+              currentStep={currentStep}
+              setCurrentStep={setCurrentStep}
+            />
+            <main className="flex-1 p-6">{rendercurrentStep()}</main>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

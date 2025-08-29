@@ -3,7 +3,7 @@ import Input from "../ui/Input";
 import Icon from "../ui/Icon";
 import Button from "../ui/Button";
 
-const SignIn = ({ setStep }:any) => {
+const SignIn = ({ setStep, setUser }: any) => {
   const [formData, setFormData] = useState<{ [key: string]: string }>({
     userName: "",
     password: "",
@@ -55,6 +55,7 @@ const SignIn = ({ setStep }:any) => {
           <Button
             title="Register"
             className="w-full py-2 bg-pink-600 text-white rounded transition"
+            onClick={() => setUser(true)}
           />
 
           <p className="text-sm text-gray-500 text-center">

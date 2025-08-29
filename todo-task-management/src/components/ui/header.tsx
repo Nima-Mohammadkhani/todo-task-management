@@ -3,7 +3,7 @@ import Input from "./Input";
 
 const Header = () => {
   return (
-    <section className="flex items-center justify-between shadow w-full bg-white z-50 p-4">
+    <section className="flex items-center justify-between w-full bg-white z-50 p-4">
       <div className="font-bold text-2xl">
         <span className="text-[#FF6767]">Dash</span>board
       </div>
