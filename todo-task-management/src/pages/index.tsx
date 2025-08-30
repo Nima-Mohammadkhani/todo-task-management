@@ -29,18 +29,18 @@ const Index = () => {
     }
   };
   return (
-    <section className="h-screen overflow-hidden flex flex-col">
+    <section className="flex flex-col">
       {!user ? (
         <Auth setUser={setUser}/>
       ) : (
         <div className="h-full flex flex-col">
           <Header />
-          <div className="flex flex-1 overflow-hidden">
+          <div className="flex flex-1">
             <Sidebar
               currentStep={currentStep}
               setCurrentStep={setCurrentStep}
             />
-            <main className="flex-1 p-6 overflow-hidden">{rendercurrentStep()}</main>
+            <main className="flex-1 p-6">{rendercurrentStep()}</main>
           </div>
         </div>
       )}

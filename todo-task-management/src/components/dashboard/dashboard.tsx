@@ -3,7 +3,7 @@ import Card from "../ui/card";
 
 const Dashboard = () => {
   return (
-    <section className="h-full w-full">
+    <section className="flex-1 w-full">
       {/* Header Section */}
       <div className="mb-6">
         <h1 className="text-3xl font-bold text-gray-800 mb-2">
@@ -14,9 +14,9 @@ const Dashboard = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 h-full">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 h-full bg-[red] 2xl:h-fit">
         <div className="lg:col-span-2">
-          <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-6 h-full">
+          <div className="bg-white h-full 2xl:h-[460px] rounded-2xl border mb-10 border-gray-200 shadow-sm p-6">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center">
                 <Icon name="CheckSquare" className="text-red-600" />
@@ -29,8 +29,7 @@ const Dashboard = () => {
               </div>
             </div>
 
-            <div className="space-y-4 max-h-[calc(100vh-300px)] overflow-y-auto">
-              <Card />
+            <div className="space-y-4 h-86 overflow-y-auto">
               <Card />
               <Card />
               <Card />
@@ -40,79 +39,54 @@ const Dashboard = () => {
         </div>
 
         <div className="space-y-6">
-          <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-6">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
-                <Icon name="CheckSquare" className="text-blue-600" />
+          <div className="flex flex-col gap-4 bg-white rounded-2xl border border-gray-200 shadow-sm p-6">
+            <div className="flex items-center gap-2">
+              <div className="w-6 h-6 bg-red-100 rounded-lg flex items-center justify-center">
+                <Icon name="CheckSquare" className="text-red-600" />
               </div>
-              <div>
-                <h3 className="text-lg font-semibold text-gray-800">
-                  Progress Overview
-                </h3>
-                <p className="text-sm text-gray-500">
-                  Your task completion status
-                </p>
-              </div>
+              <h3 className="text-[#FF6767]">Task Status</h3>
             </div>
-
-            <div className="space-y-6">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
-                  <span className="text-sm font-medium text-gray-700">
-                    In Progress
-                  </span>
+            <div className="flex flex-wrap justify-around items-center gap-2">
+              <div className="flex flex-col items-center gap-4">
+                <div
+                  className="radial-progress text-[#05A301]"
+                  style={{ "--value": 70 } as React.CSSProperties}
+                  aria-valuenow={70}
+                  role="progressbar"
+                >
+                  70%
                 </div>
                 <div className="flex items-center gap-2">
-                  <div className="w-16 h-2 bg-gray-200 rounded-full overflow-hidden">
-                    <div
-                      className="h-full bg-blue-500 rounded-full"
-                      style={{ width: "70%" }}
-                    ></div>
-                  </div>
-                  <span className="text-sm font-semibold text-blue-600">
-                    70%
-                  </span>
+                  <div className="rounded-full size-2 bg-[#05A301]"></div>
+                  <span className="text-sm">Completed</span>
                 </div>
               </div>
-
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                  <span className="text-sm font-medium text-gray-700">
-                    Completed
-                  </span>
+              <div className="flex flex-col items-center gap-4">
+                <div
+                  className="radial-progress text-[#0225FF]"
+                  style={{ "--value": 45 } as React.CSSProperties}
+                  aria-valuenow={45}
+                  role="progressbar"
+                >
+                  45%
                 </div>
                 <div className="flex items-center gap-2">
-                  <div className="w-16 h-2 bg-gray-200 rounded-full overflow-hidden">
-                    <div
-                      className="h-full bg-green-500 rounded-full"
-                      style={{ width: "85%" }}
-                    ></div>
-                  </div>
-                  <span className="text-sm font-semibold text-green-600">
-                    85%
-                  </span>
+                  <div className="rounded-full size-2 bg-[#0225FF]"></div>
+                  <span className="text-sm">In Progress</span>
                 </div>
               </div>
-
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                  <span className="text-sm font-medium text-gray-700">
-                    Not Started
-                  </span>
+              <div className="flex flex-col items-center gap-4">
+                <div
+                  className="radial-progress text-[#F21E1E]"
+                  style={{ "--value": 15 } as React.CSSProperties}
+                  aria-valuenow={15}
+                  role="progressbar"
+                >
+                  15%
                 </div>
                 <div className="flex items-center gap-2">
-                  <div className="w-16 h-2 bg-gray-200 rounded-full overflow-hidden">
-                    <div
-                      className="h-full bg-red-500 rounded-full"
-                      style={{ width: "30%" }}
-                    ></div>
-                  </div>
-                  <span className="text-sm font-semibold text-red-600">
-                    30%
-                  </span>
+                  <div className="rounded-full size-2 bg-[#F21E1E]"></div>
+                  <span className="text-sm">Not Started</span>
                 </div>
               </div>
             </div>
@@ -138,41 +112,6 @@ const Dashboard = () => {
               <button className="w-full bg-gray-100 hover:bg-gray-200 text-gray-700 py-3 px-4 rounded-xl font-medium transition-colors">
                 Import Tasks
               </button>
-            </div>
-          </div>
-
-          <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-6">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center">
-                <Icon name="CheckSquare" className="text-orange-600" />
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold text-gray-800">
-                  Recent Activity
-                </h3>
-                <p className="text-sm text-gray-500">Latest updates</p>
-              </div>
-            </div>
-
-            <div className="space-y-4">
-              <div className="flex items-start gap-3">
-                <div className="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
-                <div className="flex-1">
-                  <p className="text-sm text-gray-700">
-                    Task "Review project proposal" marked as completed
-                  </p>
-                  <p className="text-xs text-gray-500">2 hours ago</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <div className="w-2 h-2 bg-green-500 rounded-full mt-2"></div>
-                <div className="flex-1">
-                  <p className="text-sm text-gray-700">
-                    New task "Prepare presentation" added
-                  </p>
-                  <p className="text-xs text-gray-500">4 hours ago</p>
-                </div>
-              </div>
             </div>
           </div>
         </div>
