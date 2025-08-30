@@ -36,11 +36,13 @@ const Index = () => {
         <div className="h-full flex flex-col">
           <Header />
           <div className="flex flex-1">
-            <Sidebar
+            <div>
+              <Sidebar
               currentStep={currentStep}
               setCurrentStep={setCurrentStep}
             />
-            <main className="flex-1 p-6">{rendercurrentStep()}</main>
+            </div>
+            <main className="flex-1 h-full p-6">{rendercurrentStep()}</main>
           </div>
         </div>
       )}

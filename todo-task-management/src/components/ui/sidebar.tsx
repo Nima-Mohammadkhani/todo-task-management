@@ -48,9 +48,9 @@ const Sidebar = ({ currentStep, setCurrentStep }: any) => {
   ];
 
   return (
-    <section className="relative w-80">
+    <section className="flex flex-col relative w-80 h-full">
       <div className="bg-[#F5F8FF] h-12 w-full"></div>
-      <div className="flex flex-col justify-between gap-4 bg-[#FF6767] min-h-[calc(100vh-128px)] p-6 pt-16 rounded-t-md relative">
+      <div className="flex-1 flex flex-col justify-between gap-4 bg-[#FF6767] p-6 pt-16 rounded-t-md relative">
         <div className="absolute -top-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
           <div className="rounded-full border-4 border-white overflow-hidden w-20 h-20">
             <img

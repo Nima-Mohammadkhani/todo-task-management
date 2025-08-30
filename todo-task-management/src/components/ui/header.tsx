@@ -3,12 +3,12 @@ import Input from "./Input";
 
 const Header = () => {
   return (
-    <section className="flex items-center justify-between w-full bg-white z-50 p-4">
+    <section className="flex items-center justify-between w-full bg-white sticky top-0 z-50 p-4">
       <div className="font-bold text-2xl">
         <span className="text-[#FF6767]">Dash</span>board
       </div>
       <div className="relative w-1/2 shadow rounded-md">
-        <Input placeholder="Search your task here..." className="p-2" />
+        <Input placeholder="Search your task here..." className="p-2 w-full" />
         <Icon
           name="Search"
           className="absolute right-0 top-0 rounded-md h-full bg-[#FF6767] p-2 text-white"

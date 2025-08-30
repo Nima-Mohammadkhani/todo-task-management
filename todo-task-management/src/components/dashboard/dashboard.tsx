@@ -3,10 +3,9 @@ import Card from "../ui/card";
 
 const Dashboard = () => {
   return (
-    <section className="flex-1 w-full">
-      {/* Header Section */}
-      <div className="mb-6">
-        <h1 className="text-3xl font-bold text-gray-800 mb-2">
+    <section className="flex-1 flex flex-col justify-between gap-4 h-full w-full">
+      <div>
+        <h1 className="text-3xl font-bold text-gray-800 mb-4">
           Welcome back, Sundar 👋
         </h1>
         <p className="text-gray-600">
@@ -14,39 +13,37 @@ const Dashboard = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 h-full bg-[red] 2xl:h-fit">
-        <div className="lg:col-span-2">
-          <div className="bg-white h-full 2xl:h-[460px] rounded-2xl border mb-10 border-gray-200 shadow-sm p-6">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center">
-                <Icon name="CheckSquare" className="text-red-600" />
-              </div>
-              <div>
-                <h2 className="text-xl font-semibold text-gray-800">
-                  Task Status
-                </h2>
-                <p className="text-sm text-gray-500">Manage your daily tasks</p>
-              </div>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 ">
+        <div className="lg:col-span-2 bg-white rounded-2xl border border-gray-200 shadow-sm p-6">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center">
+              <Icon name="CheckSquare" className="text-red-600" />
             </div>
+            <div>
+              <h2 className="text-xl font-semibold text-gray-800">
+                Task Status
+              </h2>
+              <p className="text-sm text-gray-500">Manage your daily tasks</p>
+            </div>
+          </div>
 
-            <div className="space-y-4 h-86 overflow-y-auto">
-              <Card />
-              <Card />
-              <Card />
-              <Card />
-            </div>
+          <div className="space-y-4 h-[450px] xl:h-[430px] 2xl:h-86 overflow-y-auto">
+            <Card />
+            <Card />
+            <Card />
+            <Card />
           </div>
         </div>
 
         <div className="space-y-6">
-          <div className="flex flex-col gap-4 bg-white rounded-2xl border border-gray-200 shadow-sm p-6">
+          <div className="flex flex-col gap-4 h-full 2xl:h-fit bg-white rounded-2xl border border-gray-200 shadow-sm p-6">
             <div className="flex items-center gap-2">
-              <div className="w-6 h-6 bg-red-100 rounded-lg flex items-center justify-center">
+              <div className="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center">
                 <Icon name="CheckSquare" className="text-red-600" />
               </div>
               <h3 className="text-[#FF6767]">Task Status</h3>
             </div>
-            <div className="flex flex-wrap justify-around items-center gap-2">
+            <div className="flex flex-col 2xl:flex-row justify-around items-center gap-10 2xl:gap-4">
               <div className="flex flex-col items-center gap-4">
                 <div
                   className="radial-progress text-[#05A301]"
@@ -92,7 +89,7 @@ const Dashboard = () => {
             </div>
           </div>
 
-          <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-6">
+          <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-6 hidden 2xl:block">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
                 <Icon name="CheckSquare" className="text-purple-600" />
@@ -114,6 +111,29 @@ const Dashboard = () => {
               </button>
             </div>
           </div>
+        </div>
+      </div>
+
+      <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-6 w-full block 2xl:hidden">
+        <div className="flex items-center gap-3 mb-6">
+          <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
+            <Icon name="CheckSquare" className="text-purple-600" />
+          </div>
+          <div>
+            <h3 className="text-lg font-semibold text-gray-800">
+              Quick Actions
+            </h3>
+            <p className="text-sm text-gray-500">Add new tasks quickly</p>
+          </div>
+        </div>
+
+        <div className="space-y-3">
+          <button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-4 rounded-xl font-medium transition-colors">
+            + Add New Task
+          </button>
+          <button className="w-full bg-gray-100 hover:bg-gray-200 text-gray-700 py-3 px-4 rounded-xl font-medium transition-colors">
+            Import Tasks
+          </button>
         </div>
       </div>
     </section>
