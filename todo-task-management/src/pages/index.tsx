@@ -31,16 +31,16 @@ const Index = () => {
   return (
     <section className="flex flex-col">
       {!user ? (
-        <Auth setUser={setUser}/>
+        <Auth setUser={setUser} />
       ) : (
         <div className="h-full flex flex-col">
           <Header />
           <div className="flex flex-1">
             <div>
               <Sidebar
-              currentStep={currentStep}
-              setCurrentStep={setCurrentStep}
-            />
+                currentStep={currentStep}
+                setCurrentStep={setCurrentStep}
+              />
             </div>
             <main className="flex-1 h-full p-6">{rendercurrentStep()}</main>
           </div>
